@@ -18,7 +18,7 @@ Where
 	element-identifier is the id, event-name or stream-name for the frame
 	type is the type of the stream (single flim, event or authenticated stream) ==> Default : flim
 	w is the width as css declaration (%,px,em) ==> Default : 100%
-    h is the height as css declaration (%,px,em). if height=100% and url is in the same domain as web site, the height will be ajusted to the real height of the source ==> Default 100%
+    h is the height as css declaration (%,px,em). if height=100% the height will be adjusted while keeping aspect ratio ==> Default 100%
 	class is a CSS class ==> Default : none
     ID is the id and name of the frame ==> default : iframe<no of the frame in the node (if multiple)>
 
