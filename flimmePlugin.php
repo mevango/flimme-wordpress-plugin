@@ -43,16 +43,25 @@ function _flimme_getHTML($params) {
     }
     $output =  "<iframe $output></iframe>";
     if ( $params["height"] == "100%" ) {
+        $ratio = 16/9;
+        switch ($params["type"]){
+            case "event":
+                $ratio = 1.257178386;
+                break;
+            default:
+                $ratio = 16/9;
+                break;
+        }
         $output .= '
 			<script>
 			function fixHeight(obj, offset) {
                 var helpFrame = jQuery("#" + obj.name);
                 jQuery(window).resize(function(ev){
                     var innerDocWidth = helpFrame.width();
-                    helpFrame.height((innerDocWidth/(16/9)) + offset);
+                    helpFrame.height((innerDocWidth/('.$ratio.')) + offset);
                 });
                 var innerDocWidth = helpFrame.width();
-                helpFrame.height((innerDocWidth/(16/9)) + offset);
+                helpFrame.height((innerDocWidth/('.$ratio.')) + offset);
             }
 			</script>
 		';
@@ -91,7 +100,7 @@ function theme_flimme_render_url($vars) {
             return 'src="https://flimme.com/events_auth/' . $id . '/"';
             break;
         case "event":
-            return 'src="https://flimme.com/#/embed/events/' . $id . '"';
+            return 'src="https://flimme.com/embed/@' . $id . '"';
             break;
         default:
             return 'src="https://flimme.com/#/embed/play/' . $id . '"';
