@@ -46,7 +46,7 @@ function _flimme_getHTML($params) {
         $ratio = 16/9;
         switch ($params["type"]){
             case "event":
-                $ratio = 1.257178386;
+                $ratio = "16/9)+173";
                 break;
             default:
                 $ratio = 16/9;
