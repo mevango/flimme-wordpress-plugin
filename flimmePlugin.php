@@ -8,7 +8,7 @@ Author: sspielvogel
 License: GPLv3
 */
 
-define('FLIMME_VERSION', '1.0');
+define('FLIMME_VERSION', '1.0.1');
 global $_frameNo;
 
 
